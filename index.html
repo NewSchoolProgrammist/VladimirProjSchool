@@ -1,26 +1,14 @@
-<!doctype html>
-<html lang="ru">
-<head>
+<!DOCTYPE html>
+<html>
+ <head>
   <meta charset="utf-8" />
-  <title></title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<input type="file" id="file1" />
-<button onclick="save()">Save</button>
-<img id="image1" width="500px" height="500px" />
-<br>
-<script>
-    
-    function save ()  {
-        let f = file1.files[0];
-        if (f) {
-            image1.src = URL.createObjectURL(f);
-            localStorage.setItem('myImage', image1.src);
-        }
-    }
-    
-    image1.src = localStorage.getItem('myImage')
-</script>
-</body>
+  <title>Загрузка файла</title>
+ </head>
+ <body>
+  <form enctype="multipart/form-data" method="post">
+   <p>Загрузите ваши фотографии на сервер</p>
+   <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
+   <input type="submit" value="Отправить"></p>
+  </form>
+ </body>
 </html>
